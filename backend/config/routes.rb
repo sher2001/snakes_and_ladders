@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  resources :games, only: [:create, :show, :update]
+  post '/games/:id/roll_dice', to: 'games#roll_dice'
 end
